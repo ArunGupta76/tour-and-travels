@@ -1,0 +1,53 @@
+/* ==========================================================================
+   PAGE-SPECIFIC STYLES: ADMIN LOGIN (admin-login.css)
+   ========================================================================== */
+
+.admin-login-body {
+  background: radial-gradient(circle at 50% 30%, #1E293B 0%, #0F172A 100%);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px;
+}
+
+.admin-login-card {
+  background: #FFFFFF;
+  border-radius: 16px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+  max-width: 440px;
+  width: 100%;
+  padding: 44px 36px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.admin-login-header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.admin-lock-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0284C7, #06B6D4);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  margin: 0 auto 16px auto;
+  box-shadow: 0 8px 16px rgba(2, 132, 199, 0.35);
+}
+
+.admin-login-title {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 6px;
+}
+
+.admin-login-desc {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}

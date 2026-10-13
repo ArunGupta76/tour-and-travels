@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour Package Form - Wanderlust Admin</title>
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  
+  <!-- Shared Admin Common CSS -->
+  <link rel="stylesheet" href="css/admin-common.css">
+  <!-- Page Specific CSS -->
+  <link rel="stylesheet" href="css/package-form.css">
+</head>
+<body>
+
+  <!-- Admin Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="sidebar-brand-box">
+      <a href="dashboard.html" class="sidebar-brand-link">
+        <span class="sidebar-brand-icon"><i class="fa-solid fa-compass"></i></span>
+        <span>Wanderlust</span>
+      </a>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li class="nav-section-label">Core Dashboard</li>
+      <li class="sidebar-nav-item">
+        <a href="dashboard.html" class="sidebar-nav-link">
+          <i class="fa-solid fa-chart-pie"></i> <span>Dashboard</span>
+        </a>
+      </li>
+
+      <li class="nav-section-label">Inventory & Offers</li>
+      <li class="sidebar-nav-item">
+        <a href="packages.html" class="sidebar-nav-link">
+          <i class="fa-solid fa-plane-departure"></i> <span>Tour Packages</span>
+        </a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="package-form.html" class="sidebar-nav-link active">
+          <i class="fa-solid fa-square-plus"></i> <span>Add New Package</span>
+        </a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="offers.html" class="sidebar-nav-link">
+          <i class="fa-solid fa-ticket"></i> <span>Special Offers</span>
+        </a>
+      </li>
+
+      <li class="nav-section-label">Bookings & Operations</li>
+      <li class="sidebar-nav-item">
+        <a href="bookings.html" class="sidebar-nav-link">
+          <i class="fa-solid fa-receipt"></i> <span>Bookings</span>
+        </a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="users.html" class="sidebar-nav-link">
+          <i class="fa-solid fa-users"></i> <span>Registered Users</span>
+        </a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="enquiries.html" class="sidebar-nav-link">
+          <i class="fa-solid fa-envelope-open-text"></i> <span>Enquiries</span>
+        </a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="reviews.html" class="sidebar-nav-link">
+          <i class="fa-solid fa-star-half-stroke"></i> <span>Customer Reviews</span>
+        </a>
+      </li>
+
+      <li class="nav-section-label">Settings & Content</li>
+      <li class="sidebar-nav-item">
+        <a href="content.html" class="sidebar-nav-link">
+          <i class="fa-solid fa-sliders"></i> <span>Website Content</span>
+        </a>
+      </li>
+      <li class="sidebar-nav-item">
+        <a href="settings.html" class="sidebar-nav-link">
+          <i class="fa-solid fa-gear"></i> <span>System Settings</span>
+        </a>
+      </li>
+    </ul>
+
+    <div class="sidebar-footer">
+      <a href="../index.html" class="btn btn-outline-light btn-sm w-100" target="_blank">
+        <i class="fa-solid fa-arrow-up-right-from-square me-2"></i> View User Site
+      </a>
+    </div>
+  </aside>
+
+  <!-- Admin Main Layout -->
+  <div class="admin-main-wrapper">
+    <header class="admin-topbar">
+      <div class="topbar-left">
+        <button type="button" id="sidebarToggleBtn" class="sidebar-toggle-btn">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <h4 id="formPageHeading" class="fw-bold mb-0 text-primary">Create New Tour Package</h4>
+      </div>
+
+      <div class="topbar-right">
+        <div class="admin-user-pill">
+          <div id="topbarAdminInitial" class="admin-user-avatar">A</div>
+          <span id="topbarAdminName" class="fw-semibold small">Administrator</span>
+        </div>
+        <button type="button" id="adminLogoutBtn" class="btn btn-outline-danger btn-sm" title="Sign Out">
+          <i class="fa-solid fa-power-off"></i>
+        </button>
+      </div>
+    </header>
+
+    <main class="admin-content-area">
+      <div class="mb-3">
+        <a href="packages.html" class="btn btn-link text-decoration-none ps-0 text-muted small">
+          <i class="fa-solid fa-arrow-left me-1"></i> Back to All Packages
+        </a>
+      </div>
+
+      <form id="packageAdminForm">
+        <!-- 1. Basic Details Card -->
+        <div class="form-section-card">
+          <h5 class="form-section-title"><i class="fa-solid fa-info-circle text-secondary"></i> Basic Package Information</h5>
+          <div class="row g-3">
+            <div class="col-md-8">
+              <label for="pkgTitle" class="form-label small fw-bold">Package Title *</label>
+              <input type="text" id="pkgTitle" class="form-control" placeholder="e.g. Manali Adventure & Solang Snow Valley Tour" required>
+            </div>
+            <div class="col-md-4">
+              <label for="pkgCategory" class="form-label small fw-bold">Category *</label>
+              <select id="pkgCategory" class="form-select" required>
+                <option value="Domestic">Domestic (India)</option>
+                <option value="International">International</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label for="pkgDestination" class="form-label small fw-bold">Destination *</label>
+              <input type="text" id="pkgDestination" class="form-control" placeholder="e.g. Manali, Himachal Pradesh" required>
+            </div>
+            <div class="col-md-6">
+              <label for="pkgStartingLocation" class="form-label small fw-bold">Starting Location *</label>
+              <input type="text" id="pkgStartingLocation" class="form-control" placeholder="e.g. New Delhi / Chandigarh" required>
+            </div>
+            <div class="col-12">
+              <label for="pkgDescription" class="form-label small fw-bold">Full Package Overview Description *</label>
+              <textarea id="pkgDescription" class="form-control" rows="4" placeholder="Detailed description of the tour experience..." required></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Images & Media Upload Card -->
+        <div class="form-section-card">
+          <h5 class="form-section-title"><i class="fa-solid fa-images text-secondary"></i> Package Cover & Gallery Images</h5>
+          <div class="row g-3">
+            <div class="col-md-7">
+              <div class="mb-3">
+                <label for="coverImageFileInput" class="form-label small fw-bold">Upload Cover Image (From Device)</label>
+                <input type="file" id="coverImageFileInput" class="form-control" accept="image/jpeg,image/png,image/webp">
+                <span id="uploadStatusText" class="text-success small mt-1 d-block"></span>
+              </div>
+              <div class="mb-3">
+                <label for="pkgCoverImage" class="form-label small fw-bold">Or Enter Cover Image URL *</label>
+                <input type="url" id="pkgCoverImage" class="form-control" placeholder="https://images.unsplash.com/..." required>
+              </div>
+              <div>
+                <label for="pkgAdditionalImages" class="form-label small fw-bold">Additional Gallery Images (Comma-separated URLs)</label>
+                <textarea id="pkgAdditionalImages" class="form-control" rows="2" placeholder="https://image1.jpg, https://image2.jpg..."></textarea>
+              </div>
+            </div>
+            <div class="col-md-5">
+              <label class="form-label small fw-bold">Cover Preview</label>
+              <div class="image-preview-box">
+                <span id="imagePlaceholderText" class="text-muted small">No image selected</span>
+                <img id="coverImagePreview" src="" alt="Preview" class="d-none">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Duration & Pricing Card -->
+        <div class="form-section-card">
+          <h5 class="form-section-title"><i class="fa-solid fa-coins text-secondary"></i> Duration & Authoritative Pricing</h5>
+          <div class="row g-3">
+            <div class="col-md-3 col-6">
+              <label for="pkgDurationDays" class="form-label small fw-bold">Duration (Days) *</label>
+              <input type="number" id="pkgDurationDays" class="form-control" min="1" value="5" required>
+            </div>
+            <div class="col-md-3 col-6">
+              <label for="pkgDurationNights" class="form-label small fw-bold">Duration (Nights) *</label>
+              <input type="number" id="pkgDurationNights" class="form-control" min="0" value="4" required>
+            </div>
+            <div class="col-md-3 col-6">
+              <label for="pkgOriginalPrice" class="form-label small fw-bold">Original Price (₹) *</label>
+              <input type="number" id="pkgOriginalPrice" class="form-control" min="0" value="15000" required>
+            </div>
+            <div class="col-md-3 col-6">
+              <label for="pkgDiscountPct" class="form-label small fw-bold">Discount Percentage (%)</label>
+              <input type="number" id="pkgDiscountPct" class="form-control" min="0" max="100" value="20">
+            </div>
+            <div class="col-md-6">
+              <label for="pkgDiscountedPrice" class="form-label small fw-bold">Final Calculated Selling Price (₹) *</label>
+              <input type="number" id="pkgDiscountedPrice" class="form-control fw-bold text-success fs-5" min="0" value="12000" required>
+              <small class="text-muted">Authoritative price applied when booking.</small>
+            </div>
+            <div class="col-md-3 col-6">
+              <label for="pkgAvailability" class="form-label small fw-bold">Availability Status</label>
+              <select id="pkgAvailability" class="form-select">
+                <option value="Available">Available</option>
+                <option value="Limited">Limited Seats</option>
+                <option value="Sold Out">Sold Out</option>
+              </select>
+            </div>
+            <div class="col-md-3 col-6">
+              <label for="pkgMaxTravellers" class="form-label small fw-bold">Capacity (Max Travellers)</label>
+              <input type="number" id="pkgMaxTravellers" class="form-control" min="1" value="20">
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Dynamic Itinerary Builder Card -->
+        <div class="form-section-card">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <h5 class="form-section-title mb-0 border-0 pb-0"><i class="fa-solid fa-timeline text-secondary"></i> Day-by-Day Itinerary Builder</h5>
+            <button type="button" id="addItineraryDayBtn" class="btn btn-outline-primary btn-sm">
+              <i class="fa-solid fa-plus me-1"></i> Add Day
+            </button>
+          </div>
+          <p class="text-muted small mb-3">Describe each day of the journey with activities, meals, and accommodations.</p>
+
+          <div id="itineraryDaysContainer">
+            <!-- Day items dynamically appended by JS -->
+          </div>
+        </div>
+
+        <!-- 5. Inclusions, Exclusions & Policies Card -->
+        <div class="form-section-card">
+          <h5 class="form-section-title"><i class="fa-solid fa-list-check text-secondary"></i> Inclusions, Exclusions & Facilities</h5>
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="pkgInclusions" class="form-label small fw-bold">Package Inclusions (One item per line)</label>
+              <textarea id="pkgInclusions" class="form-control" rows="4" placeholder="4 Nights in 4-Star Mountain View Resort&#10;Daily buffet breakfast and dinner&#10;Private AC cab for all transfers"></textarea>
+            </div>
+            <div class="col-md-6">
+              <label for="pkgExclusions" class="form-label small fw-bold">Package Exclusions (One item per line)</label>
+              <textarea id="pkgExclusions" class="form-control" rows="4" placeholder="Adventure sports tickets&#10;Personal alcoholic beverages&#10;Airfare tickets"></textarea>
+            </div>
+            <div class="col-md-6">
+              <label for="pkgAccommodation" class="form-label small fw-bold">Hotel Stay Information</label>
+              <textarea id="pkgAccommodation" class="form-control" rows="2" placeholder="e.g. Certified 4-Star resorts with mountain view rooms."></textarea>
+            </div>
+            <div class="col-md-6">
+              <label for="pkgTransport" class="form-label small fw-bold">Transport Details</label>
+              <textarea id="pkgTransport" class="form-control" rows="2" placeholder="e.g. Dedicated private AC vehicle with experienced driver."></textarea>
+            </div>
+            <div class="col-md-6">
+              <label for="pkgCancellation" class="form-label small fw-bold">Cancellation Policy</label>
+              <textarea id="pkgCancellation" class="form-control" rows="2" placeholder="e.g. Free cancellation up to 7 days before departure."></textarea>
+            </div>
+            <div class="col-md-6">
+              <label for="pkgInstructions" class="form-label small fw-bold">Important Instructions</label>
+              <textarea id="pkgInstructions" class="form-control" rows="2" placeholder="e.g. Carry government ID (Aadhaar / Passport)."></textarea>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Publication Status Toggles & Submit -->
+        <div class="form-section-card">
+          <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+            <div class="d-flex align-items-center gap-4">
+              <div class="form-check form-switch fs-6">
+                <input class="form-check-input" type="checkbox" role="switch" id="pkgPublished" checked>
+                <label class="form-check-label fw-bold" for="pkgPublished">Publish to Website</label>
+              </div>
+              <div class="form-check form-switch fs-6">
+                <input class="form-check-input" type="checkbox" role="switch" id="pkgFeatured">
+                <label class="form-check-label fw-bold" for="pkgFeatured">Mark as Featured (Homepage)</label>
+              </div>
+            </div>
+
+            <div class="d-flex gap-2">
+              <a href="packages.html" class="btn btn-light px-4">Cancel</a>
+              <button type="submit" id="formSubmitBtn" class="btn btn-primary px-4 fw-bold" style="background: linear-gradient(135deg, #0284C7, #0369A1); border: none;">
+                Save & Publish Package
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </main>
+  </div>
+
+  <!-- Admin Toast Container -->
+  <div id="adminToastContainer"></div>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Shared Admin JS -->
+  <script src="js/admin-common.js"></script>
+  <!-- Page Specific JS -->
+  <script src="js/package-form.js"></script>
+</body>
+</html>

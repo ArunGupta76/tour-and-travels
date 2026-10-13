@@ -1,0 +1,30 @@
+/* ==========================================================================
+   PAGE-SPECIFIC STYLES: ADMIN TOUR PACKAGES (admin-packages.css)
+   ========================================================================== */
+
+.package-table-thumb {
+  width: 65px;
+  height: 48px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.table-action-btns {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.table-filter-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.search-input-pill {
+  min-width: 280px;
+}

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Bookings - Wanderlust Tours & Travels</title>
+  <meta name="description" content="View and manage your tour packages, download official travel vouchers and booking receipts.">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  
+  <!-- Shared Common CSS -->
+  <link rel="stylesheet" href="css/common.css">
+  <!-- Page Specific CSS -->
+  <link rel="stylesheet" href="css/my-bookings.css">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-3">
+        <span><i class="fa-solid fa-phone me-1 text-info"></i> <a href="tel:+919876543210" class="site-phone">+91 98765 43210</a></span>
+        <span class="top-bar-divider"></span>
+        <span><i class="fa-solid fa-envelope me-1 text-info"></i> <a href="mailto:contact@wanderlusttravels.com" class="site-email">contact@wanderlusttravels.com</a></span>
+      </div>
+      <div class="d-none d-md-flex align-items-center gap-3">
+        <span class="text-white-50"><i class="fa-solid fa-user-shield me-1"></i> Customer Dashboard</span>
+        <span class="top-bar-divider"></span>
+        <a href="admin/login.html" class="text-white-50"><i class="fa-solid fa-lock me-1"></i> Admin Portal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <nav class="navbar navbar-expand-lg main-navbar">
+    <div class="container">
+      <a class="brand-logo" href="index.html">
+        <span class="brand-icon"><i class="fa-solid fa-compass"></i></span>
+        <span class="site-brand-name">Wanderlust</span>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavDropdown" aria-controls="mainNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavDropdown">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-2">
+          <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="packages.html">Tour Packages</a></li>
+          <li class="nav-item"><a class="nav-link" href="offers.html">Special Offers</a></li>
+          <li class="nav-item"><a class="nav-link" href="about.html">About Us</a></li>
+          <li class="nav-item"><a class="nav-link" href="contact.html">Contact Us</a></li>
+        </ul>
+
+        <div id="navAuthContainer" class="d-flex align-items-center gap-2">
+          <!-- Populated by checkAuthState in common.js -->
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dashboard Header -->
+  <header class="dashboard-header-bar">
+    <div class="container">
+      <h1 class="h3 fw-bold mb-1">My Travel Dashboard</h1>
+      <p class="text-white-50 small mb-0">Track booking status, download receipts, and manage itinerary details.</p>
+    </div>
+  </header>
+
+  <main class="py-4">
+    <div class="container">
+      <!-- User Profile Header Card -->
+      <div class="user-welcome-card">
+        <div class="d-flex align-items-center gap-3">
+          <div id="dashUserInitial" class="user-badge-avatar">U</div>
+          <div>
+            <h4 id="dashUserName" class="fw-bold mb-0 text-primary">Travel Guest</h4>
+            <span id="dashUserEmail" class="text-muted small">guest@example.com</span>
+          </div>
+        </div>
+        <div class="d-flex align-items-center gap-3">
+          <span id="totalBookingsCount" class="badge bg-primary px-3 py-2 fs-6">0 Bookings</span>
+          <a href="profile.html" class="btn-outline-custom py-2 px-3 small">
+            <i class="fa-solid fa-user-gear me-1"></i> Edit Profile
+          </a>
+        </div>
+      </div>
+
+      <!-- Bookings List Section -->
+      <div class="d-flex justify-content-between align-items-center mb-4">
+        <h4 class="fw-bold text-primary mb-0"><i class="fa-solid fa-suitcase-rolling text-secondary me-2"></i> Booking History</h4>
+        <a href="packages.html" class="btn-primary-custom py-2 px-3 small">
+          <i class="fa-solid fa-plus me-1"></i> Book Another Trip
+        </a>
+      </div>
+
+      <div id="myBookingsContainer" class="row">
+        <!-- Dynamically populated by my-bookings.js -->
+      </div>
+    </div>
+  </main>
+
+  <!-- Booking Details Modal -->
+  <div class="modal fade" id="bookingDetailsModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title fw-bold"><i class="fa-solid fa-clipboard-list me-2 text-warning"></i> Booking Details</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4" id="detailsModalContent">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Printable Receipt Modal -->
+  <div class="modal fade" id="receiptModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header no-print">
+          <h5 class="modal-title fw-bold"><i class="fa-solid fa-receipt me-2 text-secondary"></i> Booking Invoice Receipt</h5>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn btn-outline-primary btn-sm" onclick="printReceipt()">
+              <i class="fa-solid fa-print me-1"></i> Print / Save PDF
+            </button>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+        </div>
+        <div class="modal-body p-4" id="receiptModalContent">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cancellation Request Modal -->
+  <div class="modal fade" id="cancellationModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header bg-danger text-white">
+          <h5 class="modal-title fw-bold"><i class="fa-solid fa-triangle-exclamation me-2"></i> Request Booking Cancellation</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <p class="text-muted small">
+            Cancellation requests are subject to the package policy. Refund will be calculated based on the departure date and refunded to your source payment method within 5-7 business days.
+          </p>
+          <form id="cancelBookingForm">
+            <input type="hidden" id="cancelBookingId">
+            <div class="mb-3">
+              <label for="cancelReason" class="form-label small fw-bold">Reason for Cancellation *</label>
+              <textarea id="cancelReason" class="form-control" rows="3" placeholder="Please state your reason for cancellation..." required></textarea>
+            </div>
+            <div class="d-flex justify-content-end gap-2">
+              <button type="button" class="btn btn-light" data-bs-dismiss="modal">Keep Booking</button>
+              <button type="submit" class="btn btn-danger">Confirm Cancellation Request</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/919876543210" id="floatingWhatsApp" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Global Toast Notification Container -->
+  <div id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer py-4 mt-5">
+    <div class="container text-center">
+      <p class="site-footer-text mb-0 small text-white-50">
+        © 2026 Wanderlust Tours & Travels Pvt. Ltd. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Shared Common JS -->
+  <script src="js/common.js"></script>
+  <!-- Page Specific JS -->
+  <script src="js/my-bookings.js"></script>
+</body>
+</html>

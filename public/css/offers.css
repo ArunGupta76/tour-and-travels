@@ -1,0 +1,135 @@
+/* ==========================================================================
+   PAGE-SPECIFIC STYLES: SPECIAL OFFERS (offers.css)
+   ========================================================================== */
+
+.offers-hero-header {
+  background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+  color: #FFFFFF;
+  padding: 60px 0;
+  text-align: center;
+  position: relative;
+}
+
+.offers-hero-header h1 {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: #FFFFFF;
+  margin-bottom: 12px;
+}
+
+.offer-large-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 30px;
+  transition: var(--transition);
+}
+
+.offer-large-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.offer-img-box {
+  position: relative;
+  height: 100%;
+  min-height: 240px;
+  background-color: #E2E8F0;
+}
+
+.offer-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.offer-discount-chip {
+  position: absolute;
+  top: 16px;
+  left: 16px;
+  background: linear-gradient(135deg, #EF4444, #F59E0B);
+  color: #FFFFFF;
+  font-weight: 800;
+  font-size: 0.85rem;
+  padding: 6px 14px;
+  border-radius: var(--radius-full);
+  box-shadow: var(--shadow-md);
+}
+
+.offer-details-body {
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.offer-title {
+  font-size: 1.45rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 10px;
+}
+
+.offer-description {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.coupon-box {
+  background: var(--bg-alt);
+  border: 1px dashed var(--secondary);
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.coupon-code-text {
+  font-family: monospace;
+  font-size: 1.15rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--primary);
+}
+
+.btn-copy-code {
+  background: var(--secondary);
+  color: #FFFFFF;
+  border: none;
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-copy-code:hover {
+  background: var(--secondary-hover);
+}
+
+.applicable-packages-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.package-pill-tag {
+  background-color: var(--accent-light);
+  color: var(--secondary);
+  font-size: 0.82rem;
+  font-weight: 600;
+  padding: 4px 10px;
+  border-radius: var(--radius-full);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}

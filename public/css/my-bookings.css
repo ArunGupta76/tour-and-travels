@@ -1,0 +1,136 @@
+/* ==========================================================================
+   PAGE-SPECIFIC STYLES: MY BOOKINGS & USER DASHBOARD (my-bookings.css)
+   ========================================================================== */
+
+.dashboard-header-bar {
+  background: linear-gradient(135deg, #0F172A 0%, #1E3E62 100%);
+  color: #FFFFFF;
+  padding: 50px 0;
+}
+
+.user-welcome-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  margin-top: -30px;
+  margin-bottom: 30px;
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.user-badge-avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--secondary), var(--accent));
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 800;
+  box-shadow: var(--shadow-md);
+}
+
+.booking-item-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 24px;
+  transition: var(--transition);
+}
+
+.booking-item-card:hover {
+  box-shadow: var(--shadow-md);
+  border-color: #CBD5E1;
+}
+
+.booking-card-header {
+  background-color: var(--bg-alt);
+  padding: 16px 24px;
+  border-bottom: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.booking-card-body {
+  padding: 24px;
+}
+
+.booking-thumb-img {
+  width: 140px;
+  height: 95px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+}
+
+/* Status Badges */
+.badge-status-pending {
+  background-color: #FEF3C7;
+  color: #B45309;
+  border: 1px solid #FDE68A;
+}
+
+.badge-status-confirmed {
+  background-color: #DCFCE7;
+  color: #15803D;
+  border: 1px solid #BBF7D0;
+}
+
+.badge-status-cancelled {
+  background-color: #FEE2E2;
+  color: #B91C1C;
+  border: 1px solid #FECACA;
+}
+
+.badge-status-completed {
+  background-color: #E0F2FE;
+  color: #0369A1;
+  border: 1px solid #BAE6FD;
+}
+
+/* Printable Receipt Modal Styling */
+.receipt-container {
+  background: #FFFFFF;
+  padding: 30px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.receipt-header {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 20px;
+  margin-bottom: 24px;
+}
+
+@media print {
+  body * {
+    visibility: hidden;
+  }
+  #printableReceiptArea, #printableReceiptArea * {
+    visibility: visible;
+  }
+  #printableReceiptArea {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

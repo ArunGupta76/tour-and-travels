@@ -1,0 +1,11 @@
+/* ==========================================================================
+   PAGE-SPECIFIC STYLES: ADMIN SETTINGS (admin-settings.css)
+   ========================================================================== */
+
+.settings-card {
+  background: #FFFFFF;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  padding: 30px;
+  margin-bottom: 24px;
+}

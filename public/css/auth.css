@@ -1,0 +1,70 @@
+/* ==========================================================================
+   PAGE-SPECIFIC STYLES: USER AUTHENTICATION (auth.css)
+   ========================================================================== */
+
+.auth-page-wrapper {
+  min-height: calc(100vh - 200px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 60px 20px;
+  background: linear-gradient(135deg, #F8FAFC 0%, #E2E8F0 100%);
+}
+
+.auth-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+  max-width: 900px;
+  width: 100%;
+}
+
+.auth-banner-side {
+  background: linear-gradient(135deg, #0F172A, #1E3E62);
+  color: #FFFFFF;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+.auth-form-side {
+  padding: 44px;
+}
+
+.auth-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.auth-subtitle {
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  margin-bottom: 28px;
+}
+
+.password-input-group {
+  position: relative;
+}
+
+.password-toggle-btn {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  padding: 4px;
+  z-index: 5;
+}
+
+.password-toggle-btn:hover {
+  color: var(--primary);
+}

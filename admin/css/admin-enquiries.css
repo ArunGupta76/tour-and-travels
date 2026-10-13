@@ -1,0 +1,8 @@
+/* ==========================================================================
+   PAGE-SPECIFIC STYLES: ADMIN ENQUIRIES (admin-enquiries.css)
+   ========================================================================== */
+
+.enquiry-subject-text {
+  font-weight: 600;
+  color: var(--primary);
+}

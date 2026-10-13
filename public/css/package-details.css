@@ -1,0 +1,238 @@
+/* ==========================================================================
+   PAGE-SPECIFIC STYLES: TOUR PACKAGE DETAILS (package-details.css)
+   ========================================================================== */
+
+/* Package Header Bar */
+.package-header-bar {
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--border-color);
+  padding: 30px 0 20px 0;
+}
+
+.package-main-title {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 12px;
+}
+
+.package-header-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px;
+  font-size: 0.95rem;
+  color: var(--text-muted);
+}
+
+.package-header-meta .meta-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Image Gallery */
+.gallery-container {
+  margin-bottom: 36px;
+}
+
+.gallery-main-img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  transition: opacity 0.3s ease;
+}
+
+.gallery-thumbnails-row {
+  display: flex;
+  gap: 12px;
+  margin-top: 14px;
+  overflow-x: auto;
+  padding-bottom: 6px;
+}
+
+.thumb-img {
+  width: 90px;
+  height: 65px;
+  object-fit: cover;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: var(--transition);
+  flex-shrink: 0;
+}
+
+.thumb-img.active,
+.thumb-img:hover {
+  border-color: var(--secondary);
+  transform: translateY(-2px);
+}
+
+/* Section Box */
+.details-section-box {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 30px;
+  margin-bottom: 30px;
+  box-shadow: var(--shadow-sm);
+}
+
+.details-section-title {
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 12px;
+}
+
+/* Day-by-Day Timeline */
+.itinerary-timeline {
+  position: relative;
+  padding-left: 30px;
+}
+
+.itinerary-timeline::before {
+  content: '';
+  position: absolute;
+  left: 11px;
+  top: 10px;
+  bottom: 20px;
+  width: 2px;
+  background-color: var(--accent);
+}
+
+.itinerary-day-item {
+  position: relative;
+  margin-bottom: 26px;
+}
+
+.itinerary-day-item:last-child {
+  margin-bottom: 0;
+}
+
+.itinerary-day-circle {
+  position: absolute;
+  left: -30px;
+  top: 2px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: var(--secondary);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.72rem;
+  font-weight: 800;
+  box-shadow: 0 0 0 4px var(--accent-light);
+}
+
+.itinerary-day-title {
+  font-size: 1.12rem;
+  font-weight: 700;
+  color: var(--primary);
+  margin-bottom: 8px;
+}
+
+.itinerary-day-desc {
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 10px;
+}
+
+.itinerary-meta-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.meta-tag-pill {
+  font-size: 0.8rem;
+  background-color: var(--bg-alt);
+  color: var(--text-muted);
+  padding: 4px 10px;
+  border-radius: var(--radius-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Inclusions & Exclusions Checklist */
+.checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.95rem;
+}
+
+.check-item i {
+  margin-top: 4px;
+}
+
+/* Sticky Booking Card */
+.sticky-booking-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 26px;
+  box-shadow: var(--shadow-lg);
+  position: sticky;
+  top: 90px;
+}
+
+.booking-price-header {
+  padding-bottom: 18px;
+  margin-bottom: 18px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.booking-price-amount {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--primary);
+}
+
+.booking-original-amount {
+  font-size: 1.1rem;
+  color: var(--text-light);
+  text-decoration: line-through;
+  margin-left: 8px;
+}
+
+/* Dynamic Live Calculation Card inside Modal */
+.calc-summary-box {
+  background: var(--bg-alt);
+  border-radius: var(--radius-sm);
+  padding: 18px;
+  margin-top: 16px;
+  font-size: 0.92rem;
+}
+
+.calc-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.calc-row.total-row {
+  border-top: 1.5px dashed var(--border-color);
+  padding-top: 10px;
+  margin-top: 10px;
+  font-weight: 800;
+  font-size: 1.15rem;
+  color: var(--primary);
+}

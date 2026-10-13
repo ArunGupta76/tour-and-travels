@@ -1,0 +1,22 @@
+/* ==========================================================================
+   PAGE-SPECIFIC STYLES: ADMIN OFFERS (admin-offers.css)
+   ========================================================================== */
+
+.offer-table-banner {
+  width: 70px;
+  height: 45px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid var(--border-color);
+}
+
+.coupon-code-badge {
+  font-family: monospace;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  background-color: #FEF3C7;
+  color: #B45309;
+  padding: 4px 8px;
+  border-radius: 6px;
+  border: 1px dashed #F59E0B;
+}

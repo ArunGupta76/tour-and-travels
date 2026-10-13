@@ -1,0 +1,66 @@
+/* ==========================================================================
+   PAGE-SPECIFIC STYLES: ABOUT US (about.css)
+   ========================================================================== */
+
+.about-hero-banner {
+  background: linear-gradient(135deg, #0F172A 0%, #1E3E62 100%);
+  color: #FFFFFF;
+  padding: 70px 0;
+  text-align: center;
+}
+
+.about-intro-card {
+  background: #FFFFFF;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  padding: 40px;
+  box-shadow: var(--shadow-sm);
+  margin-top: -40px;
+  position: relative;
+  z-index: 2;
+}
+
+.mission-vision-card {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  box-shadow: var(--shadow-sm);
+  height: 100%;
+  border-top: 4px solid var(--secondary);
+}
+
+.mission-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--accent-light);
+  color: var(--secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 18px;
+}
+
+.stat-counter-box {
+  background: linear-gradient(135deg, #0F172A, #1E293B);
+  color: #FFFFFF;
+  border-radius: var(--radius-md);
+  padding: 50px 30px;
+  text-align: center;
+}
+
+.stat-number {
+  font-size: 2.8rem;
+  font-weight: 800;
+  color: var(--accent);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+
+.stat-label {
+  font-size: 0.95rem;
+  color: #CBD5E1;
+  font-weight: 600;
+}

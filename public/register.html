@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Free Account - Wanderlust Tours & Travels</title>
+  <meta name="description" content="Register an account with Wanderlust Tours & Travels to book trips, manage your bookings, and enjoy member rewards.">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  
+  <!-- Shared Common CSS -->
+  <link rel="stylesheet" href="css/common.css">
+  <!-- Page Specific CSS -->
+  <link rel="stylesheet" href="css/auth.css">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-3">
+        <span><i class="fa-solid fa-phone me-1 text-info"></i> <a href="tel:+919876543210" class="site-phone">+91 98765 43210</a></span>
+        <span class="top-bar-divider"></span>
+        <span><i class="fa-solid fa-envelope me-1 text-info"></i> <a href="mailto:contact@wanderlusttravels.com" class="site-email">contact@wanderlusttravels.com</a></span>
+      </div>
+      <div class="d-none d-md-flex align-items-center gap-3">
+        <a href="index.html" class="text-white-50"><i class="fa-solid fa-house me-1"></i> Return Home</a>
+        <span class="top-bar-divider"></span>
+        <a href="admin/login.html" class="text-white-50"><i class="fa-solid fa-lock me-1"></i> Admin Portal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <nav class="navbar navbar-expand-lg main-navbar">
+    <div class="container">
+      <a class="brand-logo" href="index.html">
+        <span class="brand-icon"><i class="fa-solid fa-compass"></i></span>
+        <span class="site-brand-name">Wanderlust</span>
+      </a>
+
+      <div class="ms-auto d-flex align-items-center gap-2">
+        <span class="text-muted small d-none d-sm-inline">Already registered?</span>
+        <a href="login.html" class="btn-outline-custom py-2 px-3 small">
+          <i class="fa-solid fa-arrow-right-to-bracket me-1"></i> Sign In
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Register Content Wrapper -->
+  <main class="auth-page-wrapper">
+    <div class="auth-card">
+      <div class="row g-0">
+        <!-- Banner Side -->
+        <div class="col-lg-5 d-none d-lg-block">
+          <div class="auth-banner-side">
+            <div>
+              <span class="badge bg-warning text-dark mb-3">Join Wanderlust</span>
+              <h3 class="fw-bold text-white mb-3">Begin Your Travel Adventure</h3>
+              <p class="text-white-50 small lh-lg">
+                Create your account in under 60 seconds to unlock seamless online booking, instant confirmation receipts, and exclusive early access to festive promotions.
+              </p>
+            </div>
+            <div class="pt-4 border-top border-secondary border-opacity-25">
+              <ul class="list-unstyled text-white-50 small d-flex flex-column gap-2 mb-0">
+                <li><i class="fa-solid fa-check text-success me-2"></i> Instant booking reference generation</li>
+                <li><i class="fa-solid fa-check text-success me-2"></i> Downloadable tax & payment receipts</li>
+                <li><i class="fa-solid fa-check text-success me-2"></i> 24/7 dedicated travel concierge</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Side -->
+        <div class="col-lg-7">
+          <div class="auth-form-side">
+            <h2 class="auth-title">Create an Account</h2>
+            <p class="auth-subtitle">Fill in the basic details to complete registration.</p>
+
+            <form id="userRegisterForm">
+              <div class="mb-3">
+                <label for="regName" class="form-label small fw-bold">Full Name *</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-white border-end-0"><i class="fa-regular fa-user text-muted"></i></span>
+                  <input type="text" id="regName" class="form-control border-start-0" placeholder="e.g. Ananya Sharma" required>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="regEmail" class="form-label small fw-bold">Email Address *</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-white border-end-0"><i class="fa-regular fa-envelope text-muted"></i></span>
+                  <input type="email" id="regEmail" class="form-control border-start-0" placeholder="ananya@example.com" required>
+                </div>
+              </div>
+
+              <div class="mb-3">
+                <label for="regPhone" class="form-label small fw-bold">Phone Number (WhatsApp) *</label>
+                <div class="input-group">
+                  <span class="input-group-text bg-white border-end-0"><i class="fa-solid fa-phone text-muted"></i></span>
+                  <input type="tel" id="regPhone" class="form-control border-start-0" placeholder="+91 98765 43210" required>
+                </div>
+              </div>
+
+              <div class="mb-4">
+                <label for="regPassword" class="form-label small fw-bold">Create Password (Min 6 chars) *</label>
+                <div class="password-input-group">
+                  <input type="password" id="regPassword" class="form-control pe-5" placeholder="Choose a secure password" required minlength="6">
+                  <button type="button" id="toggleRegisterPasswordBtn" class="password-toggle-btn" aria-label="Toggle password visibility">
+                    <i class="fa-regular fa-eye"></i>
+                  </button>
+                </div>
+              </div>
+
+              <button type="submit" id="registerSubmitBtn" class="btn-primary-custom w-100 py-3 justify-content-center mb-3">
+                <i class="fa-solid fa-user-plus me-2"></i> Create Free Account
+              </button>
+
+              <div class="text-center text-muted small">
+                <span>Already have an account? </span>
+                <a href="login.html" class="fw-bold text-secondary">Sign In here</a>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Toast Notification Container -->
+  <div id="toastContainer"></div>
+
+  <!-- Footer -->
+  <footer class="site-footer py-4">
+    <div class="container text-center">
+      <p class="site-footer-text mb-0 small text-white-50">
+        © 2026 Wanderlust Tours & Travels Pvt. Ltd. All Rights Reserved.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Shared Common JS -->
+  <script src="js/common.js"></script>
+  <!-- Page Specific JS -->
+  <script src="js/register.js"></script>
+</body>
+</html>

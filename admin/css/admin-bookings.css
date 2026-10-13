@@ -1,0 +1,17 @@
+/* ==========================================================================
+   PAGE-SPECIFIC STYLES: ADMIN BOOKINGS (admin-bookings.css)
+   ========================================================================== */
+
+.booking-ref-chip {
+  font-family: monospace;
+  font-weight: 800;
+  color: var(--primary);
+  letter-spacing: 0.05em;
+}
+
+.modal-receipt-box {
+  background: #FFFFFF;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 24px;
+}

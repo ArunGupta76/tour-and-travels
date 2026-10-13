@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tour Packages - Wanderlust Tours & Travels</title>
+  <meta name="description" content="Browse handcrafted domestic and international travel packages. Filter by destination, price, duration, and dates.">
+  
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Font Awesome 6 Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  
+  <!-- Shared Common CSS -->
+  <link rel="stylesheet" href="css/common.css">
+  <!-- Page Specific CSS -->
+  <link rel="stylesheet" href="css/packages.css">
+</head>
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container d-flex justify-content-between align-items-center">
+      <div class="d-flex align-items-center gap-3">
+        <span><i class="fa-solid fa-phone me-1 text-info"></i> <a href="tel:+919876543210" class="site-phone">+91 98765 43210</a></span>
+        <span class="top-bar-divider"></span>
+        <span><i class="fa-solid fa-envelope me-1 text-info"></i> <a href="mailto:contact@wanderlusttravels.com" class="site-email">contact@wanderlusttravels.com</a></span>
+      </div>
+      <div class="d-none d-md-flex align-items-center gap-3">
+        <span class="text-white-50"><i class="fa-solid fa-clock me-1"></i> Support 24/7</span>
+        <span class="top-bar-divider"></span>
+        <a href="admin/login.html" class="text-white-50"><i class="fa-solid fa-lock me-1"></i> Admin Portal</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Bar -->
+  <nav class="navbar navbar-expand-lg main-navbar">
+    <div class="container">
+      <a class="brand-logo" href="index.html">
+        <span class="brand-icon"><i class="fa-solid fa-compass"></i></span>
+        <span class="site-brand-name">Wanderlust</span>
+      </a>
+
+      <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainNavDropdown" aria-controls="mainNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNavDropdown">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-lg-2">
+          <li class="nav-item">
+            <a class="nav-link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" href="packages.html">Tour Packages</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="offers.html">Special Offers</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="about.html">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="contact.html">Contact Us</a>
+          </li>
+        </ul>
+
+        <div id="navAuthContainer" class="d-flex align-items-center gap-2">
+          <a href="login.html" class="btn-outline-custom">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i> Login
+          </a>
+          <a href="register.html" class="btn-primary-custom">
+            <i class="fa-solid fa-user-plus"></i> Register
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Banner -->
+  <header class="page-banner-header">
+    <div class="container">
+      <h1 class="page-banner-title">Explore All Tour Packages</h1>
+      <p class="page-banner-subtitle">
+        Curated holidays with certified 4-star & 5-star hotels, private transfers, and experienced local tour guides.
+      </p>
+    </div>
+  </header>
+
+  <main class="py-5">
+    <div class="container">
+      <div class="row">
+        <!-- Filter & Search Sidebar Column -->
+        <aside class="col-lg-3 mb-4 mb-lg-0">
+          <div class="filter-sidebar-card">
+            <div class="filter-header">
+              <h5><i class="fa-solid fa-sliders text-secondary"></i> Filter Trips</h5>
+              <button id="clearFiltersBtn" class="btn-clear-filters">Reset All</button>
+            </div>
+
+            <!-- Search by Name / Destination -->
+            <div class="filter-group">
+              <label for="filterSearch" class="filter-group-title">
+                <span>Keyword Search</span>
+              </label>
+              <div class="input-group">
+                <span class="input-group-text bg-white border-end-0"><i class="fa-solid fa-magnifying-glass text-muted"></i></span>
+                <input type="text" id="filterSearch" class="form-control border-start-0" placeholder="Destination, state, name...">
+              </div>
+            </div>
+
+            <!-- Category (Domestic / International) -->
+            <div class="filter-group">
+              <div class="filter-group-title">
+                <span>Category</span>
+              </div>
+              <div class="category-radio-pills">
+                <label class="category-pill-label">
+                  <span><input type="radio" name="categoryFilter" value="" checked> All Packages</span>
+                </label>
+                <label class="category-pill-label">
+                  <span><input type="radio" name="categoryFilter" value="Domestic"> Domestic (India)</span>
+                  <i class="fa-solid fa-mountain-sun text-secondary"></i>
+                </label>
+                <label class="category-pill-label">
+                  <span><input type="radio" name="categoryFilter" value="International"> International</span>
+                  <i class="fa-solid fa-passport text-secondary"></i>
+                </label>
+              </div>
+            </div>
+
+            <!-- Duration Filter -->
+            <div class="filter-group">
+              <label for="filterDuration" class="filter-group-title">
+                <span>Duration</span>
+              </label>
+              <select id="filterDuration" class="form-select">
+                <option value="">Any Duration</option>
+                <option value="3">3 Days (Weekend Escapes)</option>
+                <option value="4">4 Days</option>
+                <option value="5">5 Days</option>
+                <option value="6">6 Days</option>
+                <option value="10">10+ Days</option>
+              </select>
+            </div>
+
+            <!-- Budget Range (Min / Max) -->
+            <div class="filter-group">
+              <div class="filter-group-title">
+                <span>Price Range (₹)</span>
+              </div>
+              <div class="price-inputs-row">
+                <input type="number" id="filterMinPrice" class="price-input-box" placeholder="Min ₹" min="0">
+                <input type="number" id="filterMaxPrice" class="price-input-box" placeholder="Max ₹" min="0">
+              </div>
+              <button id="applyPriceFilterBtn" class="btn btn-outline-secondary btn-sm w-100 mt-2">Apply Price</button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Packages Results Column -->
+        <section class="col-lg-9">
+          <!-- Results Top Bar -->
+          <div class="results-top-bar">
+            <p id="resultsCountText" class="results-count-text">
+              Loading available packages...
+            </p>
+            <div class="sort-select-box">
+              <label for="sortBySelect" class="text-muted small mb-0">Sort By:</label>
+              <select id="sortBySelect">
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="duration-asc">Duration: Short to Long</option>
+                <option value="duration-desc">Duration: Long to Short</option>
+                <option value="popular">Popularity & Featured</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Dynamic Packages Cards Container -->
+          <div id="packagesListContainer" class="row">
+            <div class="col-12 spinner-container">
+              <div class="spinner-glow"></div>
+              <p class="text-muted">Fetching packages from server...</p>
+            </div>
+          </div>
+
+          <!-- Pagination -->
+          <nav id="paginationContainer" class="mt-4" aria-label="Package pages"></nav>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Floating WhatsApp Button -->
+  <a href="https://wa.me/919876543210" id="floatingWhatsApp" class="floating-whatsapp" target="_blank" rel="noopener noreferrer" aria-label="Chat on WhatsApp">
+    <i class="fa-brands fa-whatsapp"></i>
+  </a>
+
+  <!-- Global Toast Notification Container -->
+  <div id="toastContainer"></div>
+
+  <!-- Professional Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-lg-4 col-md-6">
+          <div class="footer-brand">
+            <a class="brand-logo" href="index.html">
+              <span class="brand-icon"><i class="fa-solid fa-compass"></i></span>
+              <span class="site-brand-name">Wanderlust</span>
+            </a>
+            <p class="footer-desc">
+              Your trusted partner for handcrafted holidays, luxury packages, adventure trips, and customized global travel.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-heading">Quick Links</h5>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+            <li><a href="packages.html"><i class="fa-solid fa-angle-right"></i> Tour Packages</a></li>
+            <li><a href="offers.html"><i class="fa-solid fa-angle-right"></i> Special Offers</a></li>
+            <li><a href="about.html"><i class="fa-solid fa-angle-right"></i> About Us</a></li>
+            <li><a href="contact.html"><i class="fa-solid fa-angle-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6">
+          <h5 class="footer-heading">Top Categories</h5>
+          <ul class="footer-links">
+            <li><a href="packages.html?category=Domestic"><i class="fa-solid fa-angle-right"></i> Domestic India</a></li>
+            <li><a href="packages.html?category=International"><i class="fa-solid fa-angle-right"></i> International</a></li>
+            <li><a href="packages.html?duration=3"><i class="fa-solid fa-angle-right"></i> Weekend Trips</a></li>
+            <li><a href="packages.html?duration=6"><i class="fa-solid fa-angle-right"></i> Family Vacations</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <h5 class="footer-heading">Contact Details</h5>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-location-dot"></i>
+            <span class="site-address">Suite 402, Horizon Tower, MG Road, Bengaluru, India</span>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+919876543210" class="site-phone text-white">+91 98765 43210</a>
+          </div>
+          <div class="footer-contact-item">
+            <i class="fa-solid fa-envelope"></i>
+            <a href="mailto:contact@wanderlusttravels.com" class="site-email text-white">contact@wanderlusttravels.com</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="site-footer-text mb-0">
+          © 2026 Wanderlust Tours & Travels Pvt. Ltd. All Rights Reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap 5 Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Shared Common JS -->
+  <script src="js/common.js"></script>
+  <!-- Page Specific JS -->
+  <script src="js/packages.js"></script>
+</body>
+</html>
